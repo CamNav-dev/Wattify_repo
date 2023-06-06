@@ -26,15 +26,23 @@
     --tran-05: all 0.5s ease;
 }
 
-.gridcontainer{
+.gridIndex{
     display: grid;
     grid-template-areas: 
         "navbar header"
         "navbar content"
-        "footer footer";
+        "navbar footer";
 
     grid-template-columns: 6% 94% ;
-    grid-template-rows: 10% 70% 20%;
+    grid-template-rows: 10% 75% 15%;
+}
+
+.gridIndexHeader{
+    display: grid;
+    grid-template-areas: 
+        "title profile";
+    grid-template-rows: 90%;
+    grid-template-columns: 90% 10%;
 }
 
 nav{
@@ -63,7 +71,6 @@ nav{
 /*Hamburguesa*/
 
 .sidebar{
-    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -71,11 +78,11 @@ nav{
     padding: 10px 14px;
     background: var(--sidebar-color);
     z-index: 999;
-    
+    transition: var(--tran-05);
 }
 
 .sidebar.close{
-    width: 6%;
+    width: 90px;
 }
 
 .sidebar.close .text{
@@ -188,9 +195,14 @@ nav{
 }
 
 .content{
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 4rem;
     grid-area: content;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header{
@@ -201,69 +213,61 @@ header{
     font-size: 110%;
     
 }
+
+.h1Index{
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bxs-user-circle{
+    grid-area: profile;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileIcon{
+    font-size: 3rem;
+}
+
 .line{
     border-bottom: 1px solid black;
 }
-#frame1{
-    background-color: lightgrey;
-    margin: 4%;
+
+#indexImage{
+    margin: 3%;
+    max-width: 40%;
+    height: auto;
+}
+
+.indexImg{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    border-radius: 50px;
-  
 }
-
-#ini-image{
-    height: 25%;
-    width: 25%;
-    margin: 20px auto;
+.designBy{
+    margin-bottom: 1rem;
 }
-
-.subtext{
-    margin: 4px auto;
-    text-align: center;
+.indexDesc{
+    border-top: 1px solid black;
+    padding: 1rem;
 }
-
-#image-text-header{
-    margin: 4px auto;
-}
-
-.sec-div-header{
-    padding: 10px;
-    margin: 12px auto;
-    vertical-align: middle;
-    position: relative;
-}
-
-#logo-subimage{
-    height: 100px;
-    width: 100px;
-    margin: 0px auto;
-}
-
-#group{
-   align-content: center;
-}
-
-p{
-    margin: 10px auto;
-    text-align: center;
-    width: 65%;
-    font-size: 80%;
+.indexDescription{
+    text-align: justify;
+    font-size: 0.9rem;
 }
 
 footer{
     grid-area: footer;
-    font-weight: 400;
-    padding: 40px 0;
     background-color: var(--primary-color);
+    width: 100%;
+    padding: 0.8rem;
 }
 
 footer .social{
     text-align: center;
-    padding-bottom: 25px;
     color: var(--body-color);
 }
 
@@ -287,12 +291,10 @@ footer .social a:hover{
 }
 
 footer ul{
-    margin-top: 0;
-    padding: 0;
+    margin: 0.8rem;
     list-style: none;
     font-size: 10px;
     line-height: 1.6;
-    margin-bottom: 0;
     text-align: center;;
 }
 
@@ -313,9 +315,15 @@ footer ul li a:hover{
 }
 
 footer .copyright{
-    display: block;
-    margin-top: 15px;
+    margin: 1rem;
     text-align: center;
     font-size: 13px;
     color: gray;
+}
+
+
+@media screen and (max-width: 620px) {
+    header{
+        background-color: red;
+    }
 }
