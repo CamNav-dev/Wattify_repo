@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<!-- Coding by CodingNepal | www.codingnepalweb.com-->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <title> Login - Wattify </title>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
@@ -38,11 +35,11 @@
               </div>
               <div class="text sign-up-text">¿No tienes una cuenta? <label for="flip">Registrate Ahora</label></div>
             </div>
-        </form>
-      </div>
-        <div class="signup-form">
+          </form>
+        </div>
+      <div class="signup-form">
           <div class="title">Registro</div>
-        <form action="#">
+            <form action="#">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
@@ -57,14 +54,24 @@
                 <input type="password" placeholder="Ingresa tu contraseña" required>
               </div>
               <div class="button input-box">
-                <input type="submit" value="Registrar" formaction="login.html">
+                <input type="submit" value="Registrar">
               </div>
-              <div class="text sign-up-text">¿Ya tienes una cuenta? <label for="flip">Inicia sesión</label></div>
-            </div>
-      </form>
-    </div>
-    </div>
+                <div class="text sign-up-text">¿Ya tienes una cuenta? <label for="flip">Inicia sesión</label></div>
+              </div>
+            </form>
+          </div>
+        </div>
     </div>
   </div>
+  <script>    window.addEventListener('load', function() {
+    if (window.location.hash === '#signup') {
+      document.getElementById('flip').checked = true;
+    }
+});
+  
+  document.querySelector('.signup-form input[type="submit"]').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.getElementById('flip').checked = false;
+});</script>
 </body>
 </html>
