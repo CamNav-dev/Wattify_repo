@@ -124,12 +124,12 @@
 }
 
 .service-item:hover {
-    color: var(--light);
+    color: var(--dark);
     background: var(--primary) !important;
 }
 
 .service-item:hover i {
-    background-image: linear-gradient(var(--light), var(--secondary));
+    background-image: linear-gradient(var(--dark), var(--secondary));
 }
 
 .service-item:hover h4 {
@@ -137,7 +137,7 @@
 }
 
 .service-item:hover h4 {
-    color: var(--light);
+    color: var(--dark);
 }
 
 .product-item {
